@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: walletuser
+      POSTGRES_PASSWORD: walletpass
+      POSTGRES_DB: walletdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  walletapi-app:
+    build: .
+    depends_on:
+      - postgres-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/walletdb
+      SPRING_DATASOURCE_USERNAME: walletuser
+      SPRING_DATASOURCE_PASSWORD: walletpass
+    ports:
+      - "8080:8080"
+
+volumes:
+  pgdata:
+

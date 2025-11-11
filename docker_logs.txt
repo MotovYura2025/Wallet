@@ -1,0 +1,103 @@
+postgres-db  | The files belonging to this database system will be owned by user "postgres".
+postgres-db  | This user must also own the server process.
+postgres-db  | 
+postgres-db  | The database cluster will be initialized with locale "en_US.utf8".
+postgres-db  | The default database encoding has accordingly been set to "UTF8".
+postgres-db  | The default text search configuration will be set to "english".
+postgres-db  | 
+postgres-db  | Data page checksums are enabled.
+postgres-db  | 
+postgres-db  | fixing permissions on existing directory /var/lib/postgresql/18/docker ... ok
+postgres-db  | creating subdirectories ... ok
+postgres-db  | selecting dynamic shared memory implementation ... posix
+postgres-db  | selecting default "max_connections" ... 100
+postgres-db  | selecting default "shared_buffers" ... 128MB
+postgres-db  | selecting default time zone ... Etc/UTC
+postgres-db  | creating configuration files ... ok
+postgres-db  | running bootstrap script ... ok
+postgres-db  | performing post-bootstrap initialization ... ok
+postgres-db  | syncing data to disk ... ok
+postgres-db  | 
+postgres-db  | 
+postgres-db  | Success. You can now start the database server using:
+postgres-db  | 
+postgres-db  |     pg_ctl -D /var/lib/postgresql/18/docker -l logfile start
+postgres-db  | 
+postgres-db  | initdb: warning: enabling "trust" authentication for local connections
+postgres-db  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres-db  | waiting for server to start....2025-11-08 16:44:49.591 UTC [51] LOG:  starting PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres-db  | 2025-11-08 16:44:49.724 UTC [51] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-db  | 2025-11-08 16:44:50.070 UTC [57] LOG:  database system was shut down at 2025-11-08 16:44:46 UTC
+postgres-db  | 2025-11-08 16:44:50.191 UTC [51] LOG:  database system is ready to accept connections
+postgres-db  |  done
+postgres-db  | server started
+postgres-db  | CREATE DATABASE
+postgres-db  | 
+postgres-db  | 
+postgres-db  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres-db  | 
+postgres-db  | waiting for server to shut down...2025-11-08 16:44:52.032 UTC [51] LOG:  received fast shutdown request
+postgres-db  | .2025-11-08 16:44:52.137 UTC [51] LOG:  aborting any active transactions
+postgres-db  | 2025-11-08 16:44:52.140 UTC [51] LOG:  background worker "logical replication launcher" (PID 62) exited with exit code 1
+postgres-db  | 2025-11-08 16:44:52.140 UTC [55] LOG:  shutting down
+postgres-db  | 2025-11-08 16:44:52.237 UTC [55] LOG:  checkpoint starting: shutdown immediate
+postgres-db  | ..2025-11-08 16:44:54.125 UTC [55] LOG:  checkpoint complete: wrote 943 buffers (5.8%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.179 s, sync=1.202 s, total=1.985 s; sync files=303, longest=0.517 s, average=0.004 s; distance=4352 kB, estimate=4352 kB; lsn=0/1B9FBB0, redo lsn=0/1B9FBB0
+postgres-db  | 2025-11-08 16:44:54.317 UTC [51] LOG:  database system is shut down
+postgres-db  |  done
+postgres-db  | server stopped
+postgres-db  | 
+postgres-db  | PostgreSQL init process complete; ready for start up.
+postgres-db  | 
+postgres-db  | 2025-11-08 16:44:54.661 UTC [1] LOG:  starting PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres-db  | 2025-11-08 16:44:54.681 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-db  | 2025-11-08 16:44:54.681 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-db  | 2025-11-08 16:44:54.905 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-db  | 2025-11-08 16:44:55.621 UTC [73] LOG:  database system was shut down at 2025-11-08 16:44:54 UTC
+postgres-db  | 2025-11-08 16:44:56.019 UTC [1] LOG:  database system is ready to accept connections
+postgres-db  | 2025-11-08 16:49:55.954 UTC [71] LOG:  checkpoint starting: time
+postgres-db  | 2025-11-08 16:50:03.467 UTC [71] LOG:  checkpoint complete: wrote 69 buffers (0.4%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=6.934 s, sync=0.163 s, total=7.514 s; sync files=43, longest=0.069 s, average=0.004 s; distance=381 kB, estimate=381 kB; lsn=0/1BFF260, redo lsn=0/1BFF1D0
+postgres-db  | 2025-11-08 16:54:55.501 UTC [71] LOG:  checkpoint starting: time
+postgres-db  | 2025-11-08 16:54:55.588 UTC [71] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 1 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.081 s, total=0.087 s; sync files=1, longest=0.081 s, average=0.081 s; distance=7 kB, estimate=344 kB; lsn=0/1C00F80, redo lsn=0/1C00F28
+walletapi-app  | 
+walletapi-app  |   .   ____          _            __ _ _
+walletapi-app  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+walletapi-app  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+walletapi-app  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+walletapi-app  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+walletapi-app  |  =========|_|==============|___/=/_/_/_/
+walletapi-app  | 
+walletapi-app  |  :: Spring Boot ::               (v3.4.11)
+walletapi-app  | 
+walletapi-app  | 2025-11-08T17:25:05.647Z  INFO 1 --- [MyWalletAPI] [           main] c.example.walletapi.WalletApplication    : Starting WalletApplication v0.0.1-SNAPSHOT using Java 17.0.16 with PID 1 (/app/app.jar started by root in /app)
+walletapi-app  | 2025-11-08T17:25:05.653Z  INFO 1 --- [MyWalletAPI] [           main] c.example.walletapi.WalletApplication    : No active profile set, falling back to 1 default profile: "default"
+walletapi-app  | 2025-11-08T17:25:06.812Z  INFO 1 --- [MyWalletAPI] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+walletapi-app  | 2025-11-08T17:25:06.907Z  INFO 1 --- [MyWalletAPI] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 1 JPA repository interface.
+walletapi-app  | 2025-11-08T17:25:07.731Z  INFO 1 --- [MyWalletAPI] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+walletapi-app  | 2025-11-08T17:25:07.763Z  INFO 1 --- [MyWalletAPI] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+walletapi-app  | 2025-11-08T17:25:07.764Z  INFO 1 --- [MyWalletAPI] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+walletapi-app  | 2025-11-08T17:25:07.810Z  INFO 1 --- [MyWalletAPI] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+walletapi-app  | 2025-11-08T17:25:07.812Z  INFO 1 --- [MyWalletAPI] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2049 ms
+walletapi-app  | 2025-11-08T17:25:08.102Z  INFO 1 --- [MyWalletAPI] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+walletapi-app  | 2025-11-08T17:25:08.217Z  INFO 1 --- [MyWalletAPI] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+walletapi-app  | 2025-11-08T17:25:08.289Z  INFO 1 --- [MyWalletAPI] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+walletapi-app  | 2025-11-08T17:25:08.869Z  INFO 1 --- [MyWalletAPI] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+walletapi-app  | 2025-11-08T17:25:08.983Z  INFO 1 --- [MyWalletAPI] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+walletapi-app  | 2025-11-08T17:25:09.467Z  INFO 1 --- [MyWalletAPI] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@214b342f
+walletapi-app  | 2025-11-08T17:25:09.470Z  INFO 1 --- [MyWalletAPI] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+walletapi-app  | 2025-11-08T17:25:09.519Z  WARN 1 --- [MyWalletAPI] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+walletapi-app  | 2025-11-08T17:25:09.556Z  INFO 1 --- [MyWalletAPI] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+walletapi-app  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+walletapi-app  | 	Database driver: undefined/unknown
+walletapi-app  | 	Database version: 18.0
+walletapi-app  | 	Autocommit mode: undefined/unknown
+walletapi-app  | 	Isolation level: undefined/unknown
+walletapi-app  | 	Minimum pool size: undefined/unknown
+walletapi-app  | 	Maximum pool size: undefined/unknown
+walletapi-app  | 2025-11-08T17:25:10.579Z  INFO 1 --- [MyWalletAPI] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+walletapi-app  | 2025-11-08T17:25:10.645Z  INFO 1 --- [MyWalletAPI] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+walletapi-app  | 2025-11-08T17:25:11.320Z  WARN 1 --- [MyWalletAPI] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+walletapi-app  | 2025-11-08T17:25:11.940Z  INFO 1 --- [MyWalletAPI] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+walletapi-app  | 2025-11-08T17:25:11.958Z  INFO 1 --- [MyWalletAPI] [           main] c.example.walletapi.WalletApplication    : Started WalletApplication in 7.155 seconds (process running for 8.307)
+walletapi-app  | 2025-11-09T08:59:30.779Z  INFO 1 --- [MyWalletAPI] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+walletapi-app  | 2025-11-09T08:59:30.789Z  INFO 1 --- [MyWalletAPI] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+walletapi-app  | 2025-11-09T08:59:30.818Z  INFO 1 --- [MyWalletAPI] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 28 ms
