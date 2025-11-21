@@ -1,3 +1,4 @@
+# Общие игнорируемые файлы
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
@@ -25,9 +26,37 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
+
+# Gradle
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
+
+# Файлы конфигураций с секретами (игнорировать вручную добавленные пароли и т.п.)
+/src/main/resources/application.properties
+/src/main/resources/application-*.properties
+/src/test/resources/application-test.properties
+
+# Ключи, сертификаты и конфиденциальные данные
+*.jks
+*.p12
+*.pem
+*.key
+*.crt
+
+# Логи и временные файлы
+*.log
+*.tmp
+
+# Дополнительно игнорировать
+.DS_Store
+*.class
+*.jar
+*.war
+*.ear
+
+# Docker Overrides (если содержат секреты)
+docker-compose.override.yml
