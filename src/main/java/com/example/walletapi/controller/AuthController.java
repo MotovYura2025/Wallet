@@ -1,4 +1,4 @@
-package com.example.walletapi.сontroller;
+package com.example.walletapi.controller;
 
 import com.example.walletapi.entity.User;
 import com.example.walletapi.repository.UserRepository;

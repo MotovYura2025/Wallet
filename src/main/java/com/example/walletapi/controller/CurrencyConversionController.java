@@ -1,4 +1,4 @@
-package com.example.walletapi.сontroller;
+package com.example.walletapi.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

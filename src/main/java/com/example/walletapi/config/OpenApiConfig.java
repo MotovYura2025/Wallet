@@ -14,7 +14,11 @@ import org.springframework.context.annotation.Configuration;
                 description = "API для управления кошельками",
                 contact = @Contact(name = "Юра", email = "yuraggmotoff@gmail.com")
         ),
-        servers = @Server(url = "http://localhost:8080")
+        servers = {
+                @Server(url = "http://localhost:8080"),
+                @Server(url = "https://staging.example.com"), // дополнительный сервер для тестирования
+                @Server(url = "https://production.example.com") // основной сервер для продакшена
+        }
 )
 public class OpenApiConfig {
 }

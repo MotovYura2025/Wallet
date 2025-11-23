@@ -2,37 +2,38 @@ package com.example.walletapi.entity;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-@Entity public class Wallet {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID walletId;
+@Entity
+@Table(name = "wallets")
+public class Wallet {
 
-    @ElementCollection @CollectionTable(name = "wallet_balances", joinColumns = @JoinColumn(name = "wallet_id"))
+    @Id
+    @Column(name = "id", columnDefinition = "uuid", updatable = false, nullable = false)
+    private UUID id;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "wallet_balances", joinColumns = @JoinColumn(name = "wallet_id"))
     @MapKeyColumn(name = "currency")
     @Column(name = "balance")
     private Map<String, BigDecimal> balances;
 
-    public Wallet() {
-        this.balances = new HashMap<>();
+    @Column(name = "owner_email", nullable = false)
+    private String ownerEmail;
+
+    protected Wallet() {
+        // JPA constructor
     }
 
-    public Wallet(UUID walletId, Map<String, BigDecimal> balances) {
-        this.walletId = walletId;
-        this.balances = balances != null ? balances : new HashMap<>();
+    public Wallet(UUID id, Map<String, BigDecimal> balances, String ownerEmail) {
+        this.id = id;
+        this.balances = balances;
+        this.ownerEmail = ownerEmail;
     }
 
-    public Wallet(UUID walletId, BigDecimal balance, String currency) {
-    }
-
-    public UUID getWalletId() {
-        return walletId;
-    }
-
-    public void setWalletId(UUID walletId) {
-        this.walletId = walletId;
+    public UUID getId() {
+        return id;
     }
 
     public Map<String, BigDecimal> getBalances() {
@@ -40,14 +41,14 @@ import java.util.UUID;
     }
 
     public void setBalances(Map<String, BigDecimal> balances) {
-        this.balances = balances != null ? balances : new HashMap<>();
+        this.balances = balances;
     }
 
-    public String getCurrency() {
-        return "";
+    public String getOwnerEmail() {
+        return ownerEmail;
     }
 
-    public BigDecimal getBalance() {
-        return null;
+    public void setOwnerEmail(String ownerEmail) {
+        this.ownerEmail = ownerEmail;
     }
 }

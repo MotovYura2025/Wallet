@@ -1,4 +1,8 @@
 package com.example.walletapi.repository;
 
-public class TransactionRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.walletapi.entity.Transaction;
+
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+
 }

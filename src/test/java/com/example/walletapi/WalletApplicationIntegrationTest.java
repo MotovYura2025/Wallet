@@ -1,25 +1,33 @@
 package com.example.walletapi;
 
-import com.example.walletapi.entity.Wallet;
-import com.example.walletapi.repository.WalletRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import java.math.BigDecimal;
-import java.util.UUID;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 
-@SpringBootTest(classes = WalletApiApplication.class)
-class WalletApplicationIntegrationTest {
+@Testcontainers
+@SpringBootTest
+public class WalletApplicationIntegrationTest {
 
-    @Autowired private WalletRepository walletRepository;
+    @Container
+    public static PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>("postgres:15")
+            .withDatabaseName("testdb")
+            .withUsername("test")
+            .withPassword("test");
 
-    @Test void testWalletCreation() {
-        UUID walletId = UUID.randomUUID();
-        BigDecimal balance = BigDecimal.valueOf(100);
-        String currency = "RUB";
-        Wallet wallet = new Wallet(walletId, balance, currency);
-        walletRepository.save(wallet);
-        // Добавьте дополнительные проверки, например:
-        // assertThat(walletRepository.findById(walletId)).isPresent();
+    @DynamicPropertySource
+    static void registerPgProperties(DynamicPropertyRegistry registry) {
+        // Переопределение параметров подключения для тестового профиля
+        registry.add("spring.datasource.url", postgreSQLContainer::getJdbcUrl);
+        registry.add("spring.datasource.username", postgreSQLContainer::getUsername);
+        registry.add("spring.datasource.password", postgreSQLContainer::getPassword);
+    }
+
+    @Test
+    public void testWalletCreation() {
+
     }
 }
