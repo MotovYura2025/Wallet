@@ -1,14 +1,11 @@
-image: docker:20.10.16  # образ, в котором запускаются команды
+image: docker:20.10.16
 
 services:
-  - name: docker:dind  # Docker-in-Docker, чтобы запускать контейнеры из pipeline
-    command: ["--tls=false"]  # отключаем tls для простоты
+  - name: docker:dind
 
 variables:
   DOCKER_HOST: tcp://docker:2375
-  DOCKER_TLS_CERTDIR: ""  # отключение TLS
-  MAVEN_OPTS: "-Dhttps.protocols=TLSv1.2"
-  TC_CLOUD_TOKEN: ""  # если используешь Testcontainers Cloud
+  DOCKER_TLS_CERTDIR: ""       # отключает TLS, упрощает настройку
 
 stages:
   - build
@@ -16,6 +13,6 @@ stages:
 build:
   stage: build
   script:
-    - docker info  # проверяем, что Docker доступен
-    - mvn clean install -DskipTests  # собираем проект, пропуская тесты для запуска pipeline; позже можно включить тесты
+    - docker info               # проверка Docker-окружения
+    - mvn clean install         # запуск сборки и тестов
 
