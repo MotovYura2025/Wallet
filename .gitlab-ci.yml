@@ -6,7 +6,7 @@ services:
 variables:
   DOCKER_HOST: tcp://docker:2375
   DOCKER_TLS_CERTDIR: ""       # отключает TLS, упрощает настройку
-
+  TESTCONTAINERS_HOST_OVERRIDE: "host.docker.internal"
 stages:
   - build
 
